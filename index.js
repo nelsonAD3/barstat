@@ -511,7 +511,7 @@ function setListeners(){
     removeButton();
 
     formatOccData(selected_info);
-    getJsonResponse();
+    // getJsonResponse();
     
   });
 
@@ -617,7 +617,7 @@ function formatOccData(info){
       break;
   }
   console.log('hour after case: '+hour);
-  let current_hour = current_date.getHours();
+  const current_hour = current_date.getHours();
 
   //now cycle through the json response to get what we need -> current occupancy for the rest of the night
   let occ_array = info[0].popularTimesHistogram[day];
@@ -627,7 +627,7 @@ function formatOccData(info){
   // let hour_info;
   // let occ_info;
   console.log("curr hour: "+current_hour+"limit: "+limit);
-  for (i = 9; i < limit; i++ ){
+  for (let i = 13; i < limit; i++ ){
     console.log('in for loop, hour: ' + occ_array[i].hour + ' occupancy: '+occ_array[i].occupancyPercent);
     // hour_info += occ_array[i].hour;
     // occ_info += occ_array[i].occupancyPercent;
